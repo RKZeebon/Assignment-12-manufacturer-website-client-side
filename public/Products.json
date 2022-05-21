@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "title": "Blocking Chisel",
+        "price": 10,
+        "available": 1000,
+        "minOrder": 50,
+        "text": "Designed for cutting cement block,cinder block, brick and veined stone. Innovative and highest quality",
+        "img": "https://i.ibb.co/9sWtD8w/Blocking-Chisel.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Cordless Drill",
+        "price": 99.99,
+        "available": 1000,
+        "minOrder": 50,
+        "text": "Compact Cordless Power Drill/Driver Kit is lightweight and compact for working in tight spaces for long periods of time. High-speed transmission of this cordless drill with battery and charger delivers 2-speed variations allowing users to choose the level of performance needed for various applications.",
+        "img": "https://i.ibb.co/zJcjnks/Cordless-Drill.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Hand Saw",
+        "price": 15,
+        "available": 1000,
+        "minOrder": 50,
+        "text": "There are saws for the most applications and job. Select from 15-inch and 20-inch hand saws, a 10-inch fine-finish hand saw for cutting wood, plastic, and laminate, 12-inch hacksaw, and for those precision cuts, an adjustable miter box and clamping miter box both complete with saws.",
+        "img": "https://i.ibb.co/gPmVtYQ/Hand-Saw.jpg"
+    },
+    {
+        "id": 4,
+        "title": "Ladder",
+        "price": 150,
+        "available": 1000,
+        "minOrder": 50,
+        "text": "Louisville Ladder Premium Step ladders are ideal for low and medium height jobs. These steps are able to hold up to 300 pounds. Every stepladder has grooved steps to provide maximum traction. In addition, every step has a double rivet construction. A Louisville step Ladder is great for both professionals and DIY'ers. Every stepladder meets the standards set by the ANSI and OSHA, so you can feel reassured knowing your Louisville ladder is safe for your whole family to use. Louisville ladders are great for all of the construction and paint trades as well as any household task.",
+        "img": "https://i.ibb.co/xYM679F/Ladder.jpg"
+    },
+    {
+        "id": 5,
+        "title": "Mashing Hammer",
+        "price": 50,
+        "available": 1000,
+        "minOrder": 50,
+        "text": "The Mashing Hammer has a bonded and molded Shock Reduction Grip which offers the utmost in both comfort and durability, while reducing vibrations caused by impact. The head and handle are forged in one piece and have an attractive blue UV coating, both faces are fully polished. For use with chisels, punches, star drills and hardened nails. Permits heavy blows with limited swing.",
+        "img": "https://i.ibb.co/BcCvMhq/Mashing-Hammer.jpg"
+    }
+]

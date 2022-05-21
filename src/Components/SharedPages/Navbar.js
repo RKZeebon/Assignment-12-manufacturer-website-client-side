@@ -5,7 +5,7 @@ import gear2 from '../../Assets/icon/gear-icon-2.ico'
 
 const Navbar = () => {
     return (
-        <div className='sticky top-0 z-50 border-b-2'>
+        <div className='sticky top-0 z-50 border-b-2 bg-base-100'>
             <div className="navbar lg:w-5/6 mx-auto">
 
                 <div className="navbar-start">
