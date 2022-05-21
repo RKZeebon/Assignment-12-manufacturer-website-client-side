@@ -3,6 +3,7 @@ import './App.css';
 import Login from './Components/Athentication/Login';
 import SignUp from './Components/Athentication/SignUp';
 import Home from './Components/HomePage/Home';
+import Order from './Components/Order/Order';
 import Footer from './Components/SharedPages/Footer';
 import Navbar from './Components/SharedPages/Navbar';
 
@@ -12,6 +13,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />}></Route>
+        <Route path='/order/:id' element={<Order />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
       </Routes>
