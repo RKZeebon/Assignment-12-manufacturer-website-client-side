@@ -7,19 +7,18 @@ import Loading from '../SharedPages/Loading';
 
 const Order = () => {
     const id = useParams()
-    const [user] = useAuthState(auth);
+    const [user, userisLoading] = useAuthState(auth);
     const [quantityAlart, setQuantityAlart] = useState('')
-    const { isLoading, data } = useQuery('products', () =>
-        fetch('Products.json').then(res =>
+    const { isLoading, data } = useQuery('tool', () =>
+        fetch(`http://localhost:5000/tool/${id.id}`).then(res =>
             res.json()))
 
 
-    if (isLoading) {
+    if (isLoading || userisLoading) {
         return <Loading />
     }
 
-    const selectedProduct = data.filter(d => d.id == id.id)
-    const { title, price, available, minOrder, text, img } = selectedProduct[0]
+    const { title, price, available, minOrder, text, img } = data;
 
     const handleOrder = event => {
         event.preventDefault()
@@ -42,7 +41,7 @@ const Order = () => {
     return (
         <div className="min-h-full p-5 lg:w-5/6 mx-auto bg-white rounded-lg mt-2">
             <div className="hero-content flex-col lg:flex-row max-w-full my-12">
-                <div className='w-1/2'>
+                <div className='lg:w-1/2'>
                     <img className='w-1/2' src={img} alt='' />
                     <h1 className="text-5xl font-bold pb-5">{title}</h1>
                     <p className="py-1 text-lg"><span className='font-bold'>Price:</span> ${price}</p>
@@ -50,8 +49,10 @@ const Order = () => {
                     <p className="py-1 text-lg"><span className='font-bold'>Min. Order:</span> {minOrder}</p>
                     <p className="py-1 text-lg"><span className='font-bold'>Description:</span> {text}</p>
                 </div>
-                <div className='w-1/2 flex justify-center'>
-                    <form onSubmit={handleOrder} class="form-control w-3/5">
+                <div className='lg:w-1/2 flex justify-center'>
+
+                    <form onSubmit={handleOrder} class="form-control lg:w-3/5">
+                        <h2 className='text-center mb-5 text-primary text-3xl font-semibold'>Fill out this order form</h2>
                         <label class="label">
                             <span class="label-text">Your name:</span>
                         </label>

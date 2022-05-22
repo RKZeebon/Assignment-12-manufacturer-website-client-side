@@ -1,11 +1,13 @@
 import React from 'react';
 import { useQuery } from 'react-query';
+import { useNavigate } from 'react-router-dom';
 import Loading from '../../SharedPages/Loading';
 import Tool from './Tool';
 
 const HomePageTools = () => {
-    const { isLoading, data } = useQuery('products', () =>
-        fetch('Products.json').then(res =>
+    const navigate = useNavigate()
+    const { isLoading, data } = useQuery('homePageTools', () =>
+        fetch('http://localhost:5000/tools').then(res =>
             res.json()))
 
 
@@ -19,11 +21,12 @@ const HomePageTools = () => {
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5'>
                 {
                     homePageTools.map(tool => <Tool
-                        key={tool.id}
+                        key={tool._id}
                         tool={tool}
                     ></Tool>)
                 }
             </div>
+            <div className='flex items-center justify-center mt-5'><button onClick={() => navigate('/alltools')} className='btn btn-secondary text-xl'>See All Tools ➾</button></div>
         </div>
     );
 };

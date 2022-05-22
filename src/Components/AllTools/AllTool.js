@@ -1,9 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const Tool = ({ tool }) => {
-    const { _id, title, price, available, minOrder, text, img } = tool
+const AllTool = ({ tool }) => {
     const navigate = useNavigate()
+    const { _id, title, price, available, minOrder, text, img } = tool
     return (
         <div class="card shadow-xl">
             <figure><img src={img} alt={title} /></figure>
@@ -21,4 +21,4 @@ const Tool = ({ tool }) => {
     );
 };
 
-export default Tool;
+export default AllTool;
