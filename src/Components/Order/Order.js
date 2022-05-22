@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import auth from '../../firebase.init';
 import Loading from '../SharedPages/Loading';
 
@@ -22,11 +24,12 @@ const Order = () => {
 
     const handleOrder = event => {
         event.preventDefault()
-        const name = event.target.name.value
-        const email = event.target.email.value
-        const address = event.target.address.value
-        const phone = event.target.phone.value
-        const quantity = event.target.quantity.value
+        const tool = title;
+        const name = event.target.name.value;
+        const email = event.target.email.value;
+        const address = event.target.address.value;
+        const phone = event.target.phone.value;
+        const quantity = event.target.quantity.value;
         if (parseInt(quantity) < parseInt(minOrder) || parseInt(quantity) > parseInt(available)) {
             const alart = <p className='text-lg text-red-500'>You have to order for minimum: {minOrder} and maximum: {available}</p>
             setQuantityAlart(alart)
@@ -34,6 +37,22 @@ const Order = () => {
         }
         else {
             setQuantityAlart('')
+            fetch('http://localhost:5000/orders', {
+                method: 'POST',
+                body: JSON.stringify({ tool, name, email, address, phone, quantity }),
+                headers: {
+                    'Content-type': 'application/json',
+                },
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.acknowledged) {
+                        toast.success("Your order placed successfully")
+                    }
+                    else {
+                        toast.error("Something went wrong, try again later")
+                    }
+                });
 
         }
 
@@ -80,10 +99,9 @@ const Order = () => {
                         <input name='quantity' required type="number" defaultValue={minOrder} class="input input-bordered" />
                         {quantityAlart}
                         <input type="submit" value="Place Order" className="btn btn-primary px-8 text-lg uppercase font-semibold bg-gradient-to-r from-primary to-secondary mt-8" />
-
-
                     </form>
                 </div>
+                <ToastContainer />
             </div>
         </div>
     )
