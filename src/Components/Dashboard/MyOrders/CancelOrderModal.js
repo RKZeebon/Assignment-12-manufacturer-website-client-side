@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
 import { CancelOrderContext } from '../../../App';
 
 
@@ -18,10 +19,16 @@ const CancelOrderModal = () => {
         fetch(`http://localhost:5000/myorder/${orderId}`, {
             method: 'DELETE',
         })
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+                    toast.error("Your order canceled successfully")
+                }
+            })
 
     }
     return (
-        <div className='z-40'>
+        <div className=''>
             <input type="checkbox" id="cancel-order" class="modal-toggle" />
             <div class="modal modal-bottom sm:modal-middle">
                 <div class="modal-box">
@@ -37,6 +44,7 @@ const CancelOrderModal = () => {
 
                 </div>
             </div>
+            <ToastContainer />
         </div >
     );
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Review = ({ review }) => {
-    const { name, rating, comment, img } = review;
+const AllReview = ({ review }) => {
+    const { name, rating, comment, img } = review
     return (
         <div>
             <div class="card min-h-full shadow-xl">
@@ -21,4 +21,4 @@ const Review = ({ review }) => {
     );
 };
 
-export default Review;
+export default AllReview;

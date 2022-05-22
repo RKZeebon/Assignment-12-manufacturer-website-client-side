@@ -48,6 +48,7 @@ const Order = () => {
                 .then(data => {
                     if (data.acknowledged) {
                         toast.success("Your order placed successfully")
+                        event.target.reset()
                     }
                     else {
                         toast.error("Something went wrong, try again later")

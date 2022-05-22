@@ -19,7 +19,7 @@ const MyOrders = ({ setOrderID }) => {
 
     return (
         <div>
-            <h1 className='text-xl text-center font-semibold mt-2'>My Orders</h1>
+            <h1 className='text-xl text-center font-semibold mt-5 mb-2'>My Orders</h1>
 
             <div class="overflow-x-auto">
                 <table class="table table-zebra w-full">

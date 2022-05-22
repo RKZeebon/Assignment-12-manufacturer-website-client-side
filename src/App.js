@@ -1,6 +1,7 @@
 import React, { createContext, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import AllReviews from './Components/AllReviews/AllReviews';
 import AllTools from './Components/AllTools/AllTools';
 import Login from './Components/Athentication/Login';
 import SignUp from './Components/Athentication/SignUp';
@@ -26,6 +27,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />}></Route>
           <Route path='/alltools' element={<AllTools />}></Route>
+          <Route path='/allreviews' element={<AllReviews />}></Route>
           <Route path='/dashboard' element={<Dashboard />}>
             <Route index element={<MyOrders
               setOrderID={setOrderID} />}></Route>
