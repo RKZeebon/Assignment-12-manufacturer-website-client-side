@@ -1,7 +1,7 @@
 import React from 'react';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import googleIcon from '../../Assets/icon/google-logo.ico'
 import auth from '../../firebase.init';
 import Loading from '../SharedPages/Loading';
@@ -19,7 +19,9 @@ const SignUp = () => {
 
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
-    const navigate = useNavigate();
+    const navigate = useNavigate()
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
 
     let signInError;
 
@@ -40,7 +42,7 @@ const SignUp = () => {
     }
 
     if (gUser || user) {
-        navigate('/')
+        navigate(from, { replace: true });
     }
 
     const onSubmit = async data => {

@@ -24,7 +24,7 @@ const MyOrder = ({ order, index, setOrderID }) => {
                 payment ?
                     <span className='text-lg font-bold text-primary'>Processing</span>
                     :
-                    <label onClick={() => handlecancelOrder(_id)} for="cancel-order" title='Cancel this order' className='text-xl font-bold bg-red-300 hover:bg-red-500 px-4 py-2 rounded-full'>X</label>
+                    <label onClick={() => handlecancelOrder(_id)} htmlFor="cancel-order" title='Cancel this order' className='text-xl font-bold bg-red-300 hover:bg-red-500 px-4 py-2 rounded-full'>X</label>
             }</td>
         </tr>
 

@@ -39,10 +39,10 @@ const Order = () => {
             setQuantityAlart('')
             fetch('http://localhost:5000/orders', {
                 method: 'POST',
-                body: JSON.stringify({ tool, name, email, address, phone, quantity }),
                 headers: {
                     'Content-type': 'application/json',
                 },
+                body: JSON.stringify({ tool, name, email, address, phone, quantity }),
             })
                 .then(res => res.json())
                 .then(data => {
@@ -71,33 +71,33 @@ const Order = () => {
                 </div>
                 <div className='lg:w-1/2 flex justify-center'>
 
-                    <form onSubmit={handleOrder} class="form-control lg:w-3/5">
+                    <form onSubmit={handleOrder} className="form-control lg:w-3/5">
                         <h2 className='text-center mb-5 text-primary text-3xl font-semibold'>Fill out this order form</h2>
-                        <label class="label">
-                            <span class="label-text">Your name:</span>
+                        <label className="label">
+                            <span className="label-text">Your name:</span>
                         </label>
-                        <input name='name' type="text" disabled value={user.displayName} class="input input-bordered" />
+                        <input name='name' type="text" disabled value={user.displayName} className="input input-bordered" />
 
-                        <label class="label mt-4">
-                            <span class="label-text">Your Email:</span>
+                        <label className="label mt-4">
+                            <span className="label-text">Your Email:</span>
                         </label>
-                        <input name='email' type="text" disabled value={user.email} class="input input-bordered" />
+                        <input name='email' type="text" disabled value={user.email} className="input input-bordered" />
 
-                        <label class="label mt-4">
-                            <span class="label-text">Your Address:</span>
+                        <label className="label mt-4">
+                            <span className="label-text">Your Address:</span>
                         </label>
-                        <textarea name='address' required class="textarea textarea-bordered h-24" placeholder="Address"></textarea>
+                        <textarea name='address' required className="textarea textarea-bordered h-24" placeholder="Address"></textarea>
 
 
-                        <label class="label mt-4">
-                            <span class="label-text">Your Phone number:</span>
+                        <label className="label mt-4">
+                            <span className="label-text">Your Phone number:</span>
                         </label>
-                        <input name='phone' required type="text" placeholder='Your Phone number' class="input input-bordered" />
+                        <input name='phone' required type="text" placeholder='Your Phone number' className="input input-bordered" />
 
-                        <label class="label mt-4">
-                            <span class="label-text">Quantity:</span>
+                        <label className="label mt-4">
+                            <span className="label-text">Quantity:</span>
                         </label>
-                        <input name='quantity' required type="number" defaultValue={minOrder} class="input input-bordered" />
+                        <input name='quantity' required type="number" defaultValue={minOrder} className="input input-bordered" />
                         {quantityAlart}
                         <input type="submit" value="Place Order" className="btn btn-primary px-8 text-lg uppercase font-semibold bg-gradient-to-r from-primary to-secondary mt-8" />
                     </form>

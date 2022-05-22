@@ -11,11 +11,11 @@ const Dashboard = () => {
             <CancelOrderModal
                 orderId={orderId}
             />
-            <div class="drawer drawer-mobile">
-                <input id="dashboardDrawer" type="checkbox" class="drawer-toggle" />
-                <div class="drawer-content">
+            <div className="drawer drawer-mobile">
+                <input id="dashboardDrawer" type="checkbox" className="drawer-toggle" />
+                <div className="drawer-content">
                     <div className='pt-1 flex justify-end'>
-                        <label for="dashboardDrawer" class="bg-primary text-xl px-3 lg:hidden rounded-md ">Sidebar</label>
+                        <label htmlFor="dashboardDrawer" className="bg-primary text-xl px-3 lg:hidden rounded-md ">Sidebar</label>
                     </div>
                     {/* <!-- Page content here --> */}
 
@@ -27,15 +27,15 @@ const Dashboard = () => {
 
                 </div>
 
-                <div class="drawer-side w-48 rounded-lg">
-                    <label for="dashboardDrawer" class="drawer-overlay"></label>
-                    <ul class="menu p-4 overflow-y-auto bg-base-100 text-base-content">
+                <div className="drawer-side w-48 rounded-lg">
+                    <label htmlFor="dashboardDrawer" className="drawer-overlay"></label>
+                    <ul className="menu p-4 overflow-y-auto bg-base-100 text-base-content">
                         <li>
-                            <label for="dashboardDrawer" onClick={() => navigate('/dashboard')} >My Orders </label>
+                            <label htmlFor="dashboardDrawer" onClick={() => navigate('/dashboard')} >My Orders </label>
                         </li>
-                        <li><label for="dashboardDrawer" onClick={() => navigate('/dashboard/addreview')} >Add A Review</label></li>
+                        <li><label htmlFor="dashboardDrawer" onClick={() => navigate('/dashboard/addreview')} >Add A Review</label></li>
 
-                        <li><label for="dashboardDrawer" onClick={() => navigate('/dashboard/myprofile')}>My Profile</label></li>
+                        <li><label htmlFor="dashboardDrawer" onClick={() => navigate('/dashboard/myprofile')}>My Profile</label></li>
                     </ul>
 
                 </div>

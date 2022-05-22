@@ -18,10 +18,11 @@ const AddReview = () => {
             setRatingError('')
             fetch('http://localhost:5000/review', {
                 method: 'POST',
-                body: JSON.stringify({ name: user.displayName, email: user.email, rating, comment, img: user.photoURL }),
+
                 headers: {
                     'Content-type': 'application/json',
                 },
+                body: JSON.stringify({ name: user.displayName, email: user.email, rating, comment, img: user.photoURL }),
             })
                 .then(res => res.json())
                 .then(data => {
@@ -41,19 +42,19 @@ const AddReview = () => {
     return (
         <div className='min-h-full p-5 lg:w-5/6 mx-auto bg-white rounded-lg mt-2 flex justify-center'>
 
-            <form onSubmit={handleAddReview} class="form-control w-full max-w-xs">
+            <form onSubmit={handleAddReview} className="form-control w-full max-w-xs">
                 <h1 className='text-xl text-center font-semibold mt-5 mb-2'>Add a Review</h1>
-                <label class="label">
-                    <span class="label-text">Ratings out of 5:</span>
+                <label className="label">
+                    <span className="label-text">Ratings out of 5:</span>
                 </label>
-                <input name='rating' type="number" placeholder="5" class="input input-bordered w-full max-w-xs" required />
+                <input name='rating' type="number" placeholder="5" className="input input-bordered w-full max-w-xs" required />
 
                 {ratingError}
 
-                <label class="label">
-                    <span class="label-text">Your Comment</span>
+                <label className="label">
+                    <span className="label-text">Your Comment</span>
                 </label>
-                <textarea name='comment' class="textarea textarea-bordered h-24" placeholder="Comment" required></textarea>
+                <textarea name='comment' className="textarea textarea-bordered h-24" placeholder="Comment" required></textarea>
 
 
                 <input type="submit" value="Add Review" className='btn btn-primary px-8 text-lg uppercase font-semibold bg-gradient-to-r from-primary to-secondary mt-4' />

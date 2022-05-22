@@ -21,8 +21,8 @@ const MyOrders = ({ setOrderID }) => {
         <div>
             <h1 className='text-xl text-center font-semibold mt-5 mb-2'>My Orders</h1>
 
-            <div class="overflow-x-auto">
-                <table class="table table-zebra w-full">
+            <div className="overflow-x-auto">
+                <table className="table table-zebra w-full">
 
                     <thead>
                         <tr>

@@ -29,17 +29,17 @@ const CancelOrderModal = () => {
     }
     return (
         <div className=''>
-            <input type="checkbox" id="cancel-order" class="modal-toggle" />
-            <div class="modal modal-bottom sm:modal-middle">
-                <div class="modal-box">
-                    <h3 class="font-bold text-lg">You are about to cancel the order for <span className='text-red-500'>{canceledOrder?.tool}</span></h3>
+            <input type="checkbox" id="cancel-order" className="modal-toggle" />
+            <div className="modal modal-bottom sm:modal-middle">
+                <div className="modal-box">
+                    <h3 className="font-bold text-lg">You are about to cancel the order for <span className='text-red-500'>{canceledOrder?.tool}</span></h3>
 
-                    <p class="py-4 text-lg">Are you sure? You want to cancel this order?</p>
+                    <p className="py-4 text-lg">Are you sure? You want to cancel this order?</p>
 
 
                     <div className='flex justify-evenly mt-8'>
-                        <label onClick={handlecancleOrder} for="cancel-order" class="btn btn-error px-8 text-xl">Yes</label>
-                        <label for="cancel-order" class="btn btn-secondary px-8 text-xl">No</label>
+                        <label onClick={handlecancleOrder} htmlFor="cancel-order" className="btn btn-error px-8 text-xl">Yes</label>
+                        <label htmlFor="cancel-order" className="btn btn-secondary px-8 text-xl">No</label>
                     </div>
 
                 </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import googleIcon from '../../Assets/icon/google-logo.ico'
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
@@ -17,12 +17,15 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
-    const navigate = useNavigate()
     let signInError;
     const onSubmit = data => {
         signInWithEmailAndPassword(data.email, data.password)
 
     }
+    const navigate = useNavigate()
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+
     if (gLoading || loading) {
         return <Loading />
     }
@@ -37,7 +40,7 @@ const Login = () => {
     }
 
     if (gUser || user) {
-        return navigate('/')
+        navigate(from, { replace: true });
     }
 
     return (

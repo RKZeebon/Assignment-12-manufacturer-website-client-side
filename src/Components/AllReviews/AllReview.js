@@ -4,10 +4,10 @@ const AllReview = ({ review }) => {
     const { name, rating, comment, img } = review
     return (
         <div>
-            <div class="card min-h-full shadow-xl">
-                <div class="card-body">
-                    <div class="avatar flex justify-center">
-                        <div class="w-16 rounded-full">
+            <div className="card min-h-full shadow-xl">
+                <div className="card-body">
+                    <div className="avatar flex justify-center">
+                        <div className="w-16 rounded-full">
                             <img src={img} alt={name} />
                         </div>
                     </div>

@@ -17,7 +17,7 @@ const AllTools = () => {
         <div className='min-h-full p-5 lg:w-5/6 mx-auto bg-white rounded-lg mt-2
         '>
             <h1 className='mb-16 text-primary text-3xl font-semibold text-center'>Currently Available Tools</h1>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5'>
                 {
                     tools.map(tool => <AllTool
                         key={tool._id}
