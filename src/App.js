@@ -1,3 +1,4 @@
+import React, { createContext, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import AllTools from './Components/AllTools/AllTools';
@@ -12,22 +13,30 @@ import Order from './Components/Order/Order';
 import Footer from './Components/SharedPages/Footer';
 import Navbar from './Components/SharedPages/Navbar';
 
+export const CancelOrderContext = createContext('');
+
+
 function App() {
+  const [orderId, setOrderID] = useState('')
+
   return (
     <div>
       <Navbar />
-      <Routes>
-        <Route path='/' element={<Home />}></Route>
-        <Route path='/alltools' element={<AllTools />}></Route>
-        <Route path='/dashboard' element={<Dashboard />}>
-          <Route index element={<MyOrders />}></Route>
-          <Route path='addreview' element={<AddReview />}></Route>
-          <Route path='myprofile' element={<MyProfile />}></Route>
-        </Route>
-        <Route path='/order/:id' element={<Order />}></Route>
-        <Route path='/login' element={<Login />}></Route>
-        <Route path='/signup' element={<SignUp />}></Route>
-      </Routes>
+      <CancelOrderContext.Provider value={orderId}>
+        <Routes>
+          <Route path='/' element={<Home />}></Route>
+          <Route path='/alltools' element={<AllTools />}></Route>
+          <Route path='/dashboard' element={<Dashboard />}>
+            <Route index element={<MyOrders
+              setOrderID={setOrderID} />}></Route>
+            <Route path='addreview' element={<AddReview />}></Route>
+            <Route path='myprofile' element={<MyProfile />}></Route>
+          </Route>
+          <Route path='/order/:id' element={<Order />}></Route>
+          <Route path='/login' element={<Login />}></Route>
+          <Route path='/signup' element={<SignUp />}></Route>
+        </Routes>
+      </CancelOrderContext.Provider>
       <Footer />
     </div>
   );

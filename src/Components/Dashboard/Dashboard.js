@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
+import { CancelOrderContext } from '../../App';
+import CancelOrderModal from './MyOrders/CancelOrderModal';
 
 const Dashboard = () => {
+    const orderId = useContext(CancelOrderContext)
     const navigate = useNavigate()
     return (
         <div className='min-h-full p-5 lg:w-5/6 mx-auto bg-white rounded-lg mt-2'>
-
+            <CancelOrderModal
+                orderId={orderId}
+            />
             <div class="drawer drawer-mobile">
                 <input id="dashboardDrawer" type="checkbox" class="drawer-toggle" />
                 <div class="drawer-content">
@@ -17,7 +22,9 @@ const Dashboard = () => {
                     <div className='p-5'>
                         <h2 className='text-2xl font-bold text-primary text-center'>Welcome to your Dashboard</h2>
                         <Outlet />
+
                     </div>
+
                 </div>
 
                 <div class="drawer-side w-48 rounded-lg">
