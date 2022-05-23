@@ -5,6 +5,7 @@ import googleIcon from '../../Assets/icon/google-logo.ico'
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import Loading from '../SharedPages/Loading';
+import useToken from '../../Hooks/useToken';
 
 
 
@@ -22,6 +23,7 @@ const Login = () => {
         signInWithEmailAndPassword(data.email, data.password)
 
     }
+    const [token] = useToken(gUser || user)
     const navigate = useNavigate()
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
@@ -39,7 +41,7 @@ const Login = () => {
         }
     }
 
-    if (gUser || user) {
+    if (token) {
         navigate(from, { replace: true });
     }
 

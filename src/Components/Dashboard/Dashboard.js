@@ -31,11 +31,11 @@ const Dashboard = () => {
                     <label htmlFor="dashboardDrawer" className="drawer-overlay"></label>
                     <ul className="menu p-4 overflow-y-auto bg-base-100 text-base-content">
                         <li>
-                            <label htmlFor="dashboardDrawer" onClick={() => navigate('/dashboard')} >My Orders </label>
+                            <label className='font-semibold' htmlFor="dashboardDrawer" onClick={() => navigate('/dashboard')} >My Orders </label>
                         </li>
-                        <li><label htmlFor="dashboardDrawer" onClick={() => navigate('/dashboard/addreview')} >Add A Review</label></li>
+                        <li><label className='font-semibold' htmlFor="dashboardDrawer" onClick={() => navigate('/dashboard/addreview')} >Add A Review</label></li>
 
-                        <li><label htmlFor="dashboardDrawer" onClick={() => navigate('/dashboard/myprofile')}>My Profile</label></li>
+                        <li><label className='font-semibold' htmlFor="dashboardDrawer" onClick={() => navigate('/dashboard/myprofile')}>My Profile</label></li>
                     </ul>
 
                 </div>

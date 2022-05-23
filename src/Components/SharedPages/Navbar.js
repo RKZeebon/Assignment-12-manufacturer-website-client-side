@@ -8,6 +8,11 @@ import auth from '../../firebase.init';
 
 const Navbar = () => {
     const [user] = useAuthState(auth);
+
+    const handleLogout = () => {
+        signOut(auth)
+        localStorage.removeItem("token")
+    }
     return (
         <div className='sticky top-0 z-50 border-b-2 bg-base-100'>
             <div className="navbar lg:w-5/6 mx-auto">
@@ -30,7 +35,7 @@ const Navbar = () => {
                         <li className='mx-1 font-semibold'><NavLink to='/blogs'>Blogs</NavLink></li>
                         <li className='mx-1 font-semibold'><NavLink to='/about'>About</NavLink></li>
                         {
-                            user ? <li onClick={() => signOut(auth)} className='mx-1 font-semibold text-red-500'><Link to='/'>Log Out</Link></li> : <li className='mx-1 font-semibold'><NavLink to='/login'>Login</NavLink></li>
+                            user ? <li onClick={handleLogout} className='mx-1 font-semibold text-red-500'><Link to='/'>Log Out</Link></li> : <li className='mx-1 font-semibold'><NavLink to='/login'>Login</NavLink></li>
                         }
 
                     </ul>

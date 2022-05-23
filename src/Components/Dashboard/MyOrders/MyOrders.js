@@ -9,7 +9,12 @@ const MyOrders = ({ setOrderID }) => {
     const [user] = useAuthState(auth);
 
 
-    const { isLoading, data: orders, refetch } = useQuery('myOrders', () => fetch(`http://localhost:5000/myorders?email=${user.email}`).then(res => res.json()))
+    const { isLoading, data: orders, refetch } = useQuery('myOrders', () => fetch(`http://localhost:5000/myorders?email=${user.email}`, {
+        headers: {
+            'authorization': localStorage.getItem('token')
+        }
+    })
+        .then(res => res.json()))
 
     if (isLoading) {
         return <Loading />
