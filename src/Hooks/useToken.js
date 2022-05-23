@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react"
+import Loading from "../Components/SharedPages/Loading";
 
 const useToken = user => {
     const [token, setToken] = useState('')
 
     useEffect(() => {
-        const email = user?.user.email;
         const name = user?.user.displayName;
+        const email = user?.user.email;
         const currentUser = { email, name }
 
         if (email) {
