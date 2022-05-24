@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import Loading from "../Components/SharedPages/Loading";
+
 
 const useToken = user => {
     const [token, setToken] = useState('')

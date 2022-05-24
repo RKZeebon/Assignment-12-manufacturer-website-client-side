@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useQuery } from 'react-query';
 import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
-import Loading from '../../SharedPages/Loading';
+
 
 const MyProfile = () => {
     const [user] = useAuthState(auth);
