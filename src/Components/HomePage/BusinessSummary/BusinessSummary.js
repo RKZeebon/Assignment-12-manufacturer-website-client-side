@@ -1,10 +1,29 @@
 import React from 'react';
+import countries from '../../../Assets/icon/countries.ico'
+import projects from '../../../Assets/icon/project.ico'
+import client from '../../../Assets/icon/client.png'
+import feedback from '../../../Assets/icon/feedback.ico'
+import BusinessSummaryCard from './BusinessSummaryCard';
 
 const BusinessSummary = () => {
+    const cardsData = [
+        { img: countries, title: "Countries", value: 50 },
+        { img: projects, title: "Complete Projects", value: 500 },
+        { img: client, title: "Happy Clients", value: 250 },
+        { img: feedback, title: "Feedbacks", value: 350 }]
+
     return (
         <div className='bg-white lg:w-5/6 mx-auto mt-24 p-5 rounded-lg'>
-            <div className='h-96'>
-                <h1 className='mb-16 text-primary text-3xl font-semibold text-center'>Why US?</h1>
+            <div>
+                <h1 className='mb-16 text-primary text-3xl font-semibold text-center'>Business Summary</h1>
+                <div className='grid grid-cols-1 lg:grid-cols-4'>
+                    {
+                        cardsData.map((card, index) => <BusinessSummaryCard
+                            key={index}
+                            card={card}
+                        ></BusinessSummaryCard>)
+                    }
+                </div>
 
             </div>
         </div>
