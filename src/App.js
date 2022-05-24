@@ -19,6 +19,7 @@ import Order from './Components/Order/Order';
 import Footer from './Components/SharedPages/Footer';
 import Navbar from './Components/SharedPages/Navbar';
 import UpdateTool from './Components/Dashboard/UpdateTool/UpdateTool';
+import PageNotFound from './Components/PageNotFound/PageNotFound';
 
 export const CancelOrderContext = createContext('');
 
@@ -55,6 +56,7 @@ function App() {
           }></Route>
           <Route path='/login' element={<Login />}></Route>
           <Route path='/signup' element={<SignUp />}></Route>
+          <Route path='*' element={<PageNotFound />}></Route>
         </Routes>
       </CancelOrderContext.Provider>
       <Footer />

@@ -128,7 +128,7 @@ const SignUp = () => {
                             </label>
                         </div>
 
-                        {signInError}
+                        {<p className='text-red-500 mb-3'>{signInError}</p>}
                         <input className="w-full max-w-xs text-white btn btn-primary px-8 text-lg uppercase font-semibold bg-gradient-to-r from-primary to-secondary" type="submit" value="Sign Up" />
                     </form>
                     <p>Already have an account? <Link className='text-primary font-semibold' to="/login">Please Login</Link></p>
