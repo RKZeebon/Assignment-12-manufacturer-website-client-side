@@ -1,5 +1,5 @@
 import React from 'react';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 const Addtool = () => {
 
@@ -31,7 +31,7 @@ const Addtool = () => {
             .then((response) => response.json())
             .then(data => {
                 if (data.acknowledged) {
-                    toast("Item added successfully")
+                    toast.success("Item added successfully")
                     event.target.reset()
                 }
             });
@@ -41,9 +41,9 @@ const Addtool = () => {
 
     return (
         <div className='min-h-full p-5 lg:w-5/6 mx-auto bg-white rounded-lg mt-2 flex justify-center'>
-            <div className='flex justify-center'>
+            <div className='flex justify-center lg:w-1/2 w-5/6'>
 
-                <form onSubmit={handleAddItem} className="max-w-lg" >
+                <form onSubmit={handleAddItem} className="w-full lg:w-2/3" >
                     <h1 className='text-xl text-center font-semibold mt-5 mb-2'>Add A New tool</h1>
                     <div className='mb-2 text-lg'>
                         <input className='rounded-lg p-2 w-full border-2 border-black' type="text" name="name" id="" placeholder='Tool Name' required />
@@ -66,7 +66,6 @@ const Addtool = () => {
                     <div className='text-cente'><input className='btn btn-primary px-8 text-lg uppercase font-semibold bg-gradient-to-r from-primary to-secondary w-full' type="submit" value="Add Tool" /></div>
                 </form>
             </div>
-            <ToastContainer />
         </div>
     );
 };

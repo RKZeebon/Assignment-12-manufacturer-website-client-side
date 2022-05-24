@@ -34,6 +34,7 @@ const MyOrders = ({ setOrderID }) => {
                             <th>Sl No.</th>
                             <th>Item</th>
                             <th>Quantity</th>
+                            <th>Total Price</th>
                             <th>Payment Status</th>
                             <th>Action</th>
                         </tr>

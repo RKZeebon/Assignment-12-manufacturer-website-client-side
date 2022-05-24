@@ -3,7 +3,7 @@ import React from 'react';
 
 const MyOrder = ({ order, index, setOrderID }) => {
 
-    const { _id, tool, quantity, payment } = order;
+    const { _id, tool, quantity, payment, totalDue } = order;
     const handlecancelOrder = (id) => {
         setOrderID(id)
     }
@@ -15,6 +15,7 @@ const MyOrder = ({ order, index, setOrderID }) => {
             <th>{index + 1}</th>
             <td>{tool}</td>
             <td>{quantity}</td>
+            <td>{totalDue}</td>
             <td>
                 {
                     payment ? <span className='text-xl bg-secondary px-7 py-2 rounded-lg text-green-700 uppercase'>Paid</span> : <button className='btn btn-primary'>Pay Now</button>

@@ -11,7 +11,7 @@ const Order = () => {
     const id = useParams()
     const [user, userisLoading] = useAuthState(auth);
     const [quantityAlart, setQuantityAlart] = useState('')
-    const { isLoading, data } = useQuery('tool', () =>
+    const { isLoading, data, refetch } = useQuery('tool', () =>
         fetch(`http://localhost:5000/tool/${id.id}`).then(res =>
             res.json()))
 
@@ -30,6 +30,8 @@ const Order = () => {
         const address = event.target.address.value;
         const phone = event.target.phone.value;
         const quantity = event.target.quantity.value;
+        const newAvailable = parseInt(available) - parseInt(quantity)
+        const totalDue = parseInt(quantity) * parseInt(price)
         if (parseInt(quantity) < parseInt(minOrder) || parseInt(quantity) > parseInt(available)) {
             const alart = <p className='text-lg text-red-500'>You have to order for minimum: {minOrder} and maximum: {available}</p>
             setQuantityAlart(alart)
@@ -42,7 +44,7 @@ const Order = () => {
                 headers: {
                     'Content-type': 'application/json',
                 },
-                body: JSON.stringify({ tool, name, email, address, phone, quantity }),
+                body: JSON.stringify({ tool, name, email, address, phone, quantity, totalDue }),
             })
                 .then(res => res.json())
                 .then(data => {
@@ -55,6 +57,22 @@ const Order = () => {
                     }
                 });
 
+
+
+            fetch(`http://localhost:5000/tool/${id.id}`, {
+                method: "PUT",
+                headers: {
+                    'Content-type': 'application/json',
+                },
+                body: JSON.stringify({ available: newAvailable })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.acknowledged) {
+                        refetch()
+                        event.target.reset()
+                    }
+                })
         }
 
     }
@@ -62,7 +80,7 @@ const Order = () => {
         <div className="min-h-full p-5 lg:w-5/6 mx-auto bg-white rounded-lg mt-2">
             <div className="hero-content flex-col lg:flex-row max-w-full my-12">
                 <div className='lg:w-1/2'>
-                    <img className='w-1/2' src={img} alt='' />
+                    <img className='w-1/2 mb-5' src={img} alt='' />
                     <h1 className="text-5xl font-bold pb-5">{title}</h1>
                     <p className="py-1 text-lg"><span className='font-bold'>Price:</span> ${price}</p>
                     <p className="py-1 text-lg"><span className='font-bold'>Available:</span> {available}</p>

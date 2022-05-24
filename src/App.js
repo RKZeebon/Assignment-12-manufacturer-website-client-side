@@ -11,13 +11,14 @@ import AddReview from './Components/Dashboard/AddReview/AddReview';
 import AllUsers from './Components/Dashboard/AllUsers/AllUsers';
 import Dashboard from './Components/Dashboard/Dashboard';
 import ManageOrders from './Components/Dashboard/ManageOrders/ManageOrders';
-import ManageProduct from './Components/Dashboard/ManageProduct/ManageProduct';
+import ManageTools from './Components/Dashboard/ManageTools/ManageTools';
 import MyOrders from './Components/Dashboard/MyOrders/MyOrders';
 import MyProfile from './Components/Dashboard/MyProfile/MyProfile';
 import Home from './Components/HomePage/Home';
 import Order from './Components/Order/Order';
 import Footer from './Components/SharedPages/Footer';
 import Navbar from './Components/SharedPages/Navbar';
+import UpdateTool from './Components/Dashboard/UpdateTool/UpdateTool';
 
 export const CancelOrderContext = createContext('');
 
@@ -43,7 +44,8 @@ function App() {
             <Route path='manageorders' element={<ManageOrders />}></Route>
             <Route path='addtool' element={<Addtool />}></Route>
             <Route path='users' element={<AllUsers />}></Route>
-            <Route path='manageproducts' element={<ManageProduct />}></Route>
+            <Route path='managetools' element={<ManageTools />}></Route>
+            <Route path='managetools/updatetool/:id' element={<UpdateTool />}></Route>
 
           </Route>
           <Route path='/order/:id' element={
