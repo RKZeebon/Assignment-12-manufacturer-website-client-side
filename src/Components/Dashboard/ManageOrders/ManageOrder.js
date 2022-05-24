@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ManageOrder = ({ order, index }) => {
-    const { _id, tool, quantity, payment, name, email, phone } = order;
+    const { tool, quantity, payment, name, email, phone } = order;
     return (
         <tr>
             <th>{index + 1}</th>

@@ -8,7 +8,7 @@ import ManageOrder from './ManageOrder';
 const ManageOrders = () => {
     const [user] = useAuthState(auth);
 
-    const { isLoading, data: orders, refetch } = useQuery('Orders', () => fetch('http://localhost:5000/orders', {
+    const { isLoading, data: orders } = useQuery('Orders', () => fetch('http://localhost:5000/orders', {
         headers: {
             'authorization': localStorage.getItem('token'),
             'email': user.email
@@ -20,7 +20,6 @@ const ManageOrders = () => {
         return <Loading />
     }
 
-    refetch()
     return (
         <div>
             <h1 className='text-xl text-center font-semibold mt-5 mb-2'>All Orders</h1>

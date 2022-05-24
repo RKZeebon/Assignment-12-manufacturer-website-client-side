@@ -56,7 +56,7 @@ const Dashboard = () => {
                                     <label className='font-semibold' htmlFor="dashboardDrawer" onClick={() => navigate('/dashboard/manageorders')} >Manage Orders</label>
                                 </li>
                                 <li>
-                                    <label className='font-semibold' htmlFor="dashboardDrawer" onClick={() => navigate('/dashboard/addproduct')} >Add Product</label>
+                                    <label className='font-semibold' htmlFor="dashboardDrawer" onClick={() => navigate('/dashboard/addtool')} >Add Tool</label>
                                 </li>
                                 <li>
                                     <label className='font-semibold' htmlFor="dashboardDrawer" onClick={() => navigate('/dashboard/users')} >All Users</label>

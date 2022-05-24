@@ -6,7 +6,7 @@ import AllTools from './Components/AllTools/AllTools';
 import Login from './Components/Athentication/Login';
 import ReqAuth from './Components/Athentication/ReqAuth';
 import SignUp from './Components/Athentication/SignUp';
-import AddProduct from './Components/Dashboard/AddProduct/AddProduct';
+import Addtool from './Components/Dashboard/Addtool/Addtool';
 import AddReview from './Components/Dashboard/AddReview/AddReview';
 import AllUsers from './Components/Dashboard/AllUsers/AllUsers';
 import Dashboard from './Components/Dashboard/Dashboard';
@@ -41,7 +41,7 @@ function App() {
 
             <Route path='addreview' element={<AddReview />}></Route>
             <Route path='manageorders' element={<ManageOrders />}></Route>
-            <Route path='addproduct' element={<AddProduct />}></Route>
+            <Route path='addtool' element={<Addtool />}></Route>
             <Route path='users' element={<AllUsers />}></Route>
             <Route path='manageproducts' element={<ManageProduct />}></Route>
 
