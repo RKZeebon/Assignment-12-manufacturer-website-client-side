@@ -33,7 +33,7 @@ const Navbar = () => {
                             user && <li className='mx-1 font-semibold'><NavLink to='/dashboard'>Dashboard</NavLink></li>
                         }
                         <li className='mx-1 font-semibold'><NavLink to='/blogs'>Blogs</NavLink></li>
-                        <li className='mx-1 font-semibold'><NavLink to='/about'>About</NavLink></li>
+                        <li className='mx-1 font-semibold'><NavLink to='/portfolio'>Portfolio</NavLink></li>
                         {
                             user ? <li onClick={handleLogout} className='mx-1 font-semibold text-red-500'><Link to='/'>Log Out</Link></li> : <li className='mx-1 font-semibold'><NavLink to='/login'>Login</NavLink></li>
                         }

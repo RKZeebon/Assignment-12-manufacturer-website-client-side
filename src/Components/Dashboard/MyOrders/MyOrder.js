@@ -1,8 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 const MyOrder = ({ order, index, setOrderID }) => {
-
+    const navigate = useNavigate()
     const { _id, tool, quantity, payment, totalDue } = order;
     const handlecancelOrder = (id) => {
         setOrderID(id)
@@ -18,7 +19,7 @@ const MyOrder = ({ order, index, setOrderID }) => {
             <td>{totalDue}</td>
             <td>
                 {
-                    payment ? <span className='text-xl bg-secondary px-7 py-2 rounded-lg text-green-700 uppercase'>Paid</span> : <button className='btn btn-primary'>Pay Now</button>
+                    payment ? <span className='text-xl bg-secondary px-7 py-2 rounded-lg text-green-700 uppercase'>Paid</span> : <button onClick={() => navigate(`payment/${_id}`)} className='btn btn-primary'>Pay Now</button>
                 }
             </td>
             <td>{

@@ -26,7 +26,7 @@ const HomePageTools = () => {
                     ></Tool>)
                 }
             </div>
-            <div className='flex items-center justify-center mt-5'><button onClick={() => navigate('/alltools')} className='btn btn-secondary text-xl'>See All Tools ➾</button></div>
+            <div className='flex items-center justify-center mt-10'><button onClick={() => navigate('/alltools')} className='btn btn-secondary text-xl'>See All Tools ➾</button></div>
         </div>
     );
 };

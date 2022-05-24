@@ -27,7 +27,7 @@ const Reviews = () => {
                     ></Review>)
                 }
             </div>
-            <div className='flex items-center justify-center mt-5'><button onClick={() => navigate('/allreviews')} className='btn btn-secondary text-xl'>See All Reviews ➾</button></div>
+            <div className='flex items-center justify-center mt-10'><button onClick={() => navigate('/allreviews')} className='btn btn-secondary text-xl'>See All Reviews ➾</button></div>
         </div>
     );
 };

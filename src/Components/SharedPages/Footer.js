@@ -11,7 +11,7 @@ const Footer = () => {
             <div className='lg:w-4/6 lg:mx-auto p-5'>
                 <div className='flex justify-between'>
                     <div>
-                        <h1 className='text-xl mb-2'>Connect:</h1>
+                        <h1 className='text-xl mb-2 font-bold'>Connect:</h1>
                         <div>
                             <div className='mb-2 flex items-center cursor-pointer bg-white p-2 rounded-lg'>
                                 <img className='w-8 rounded' src={facebook} alt="" />
