@@ -37,14 +37,16 @@ const Navbar = () => {
                         {
                             user ? <li onClick={handleLogout} className='mx-1 font-semibold text-red-500'><Link to='/'>Log Out</Link></li> : <li className='mx-1 font-semibold'><NavLink to='/login'>Login</NavLink></li>
                         }
-
                     </ul>
                 </div>
+
                 <div className="navbar-end">
                     {
                         user && <p className='text-xl font-semibold lg:block hidden'>{user.displayName}</p>
                     }
                 </div>
+
+
                 <div className="dropdown dropdown-end">
                     <label tabIndex="0" className="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
