@@ -22,19 +22,18 @@ const UpdateTool = () => {
 
     const handleUpdate = (event) => {
         event.preventDefault()
-        const available = event.target.available.value
+        const newQuantity = event.target.available.value
         const minOrder = event.target.minOrder.value
         const price = event.target.price.value
-        if (parseFloat(available) < 1) {
-            console.log(available, minOrder, price);
+        const newAvailable = parseInt(available) + parseInt(newQuantity)
+
+        if (parseFloat(available) < 0) {
             setUpdateError(error)
         }
         else if (parseFloat(minOrder) < 1) {
-            console.log(available, minOrder, price);
             setUpdateError(error)
         }
         else if (parseFloat(price) < 1) {
-            console.log(available, minOrder, price);
             setUpdateError(error)
         }
 
@@ -44,7 +43,7 @@ const UpdateTool = () => {
                 headers: {
                     'Content-type': 'application/json',
                 },
-                body: JSON.stringify({ available, minOrder, price })
+                body: JSON.stringify({ available: newAvailable, minOrder, price })
             })
                 .then(res => res.json())
                 .then(data => {
