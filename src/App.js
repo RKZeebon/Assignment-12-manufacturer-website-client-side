@@ -23,6 +23,7 @@ import PageNotFound from './Components/PageNotFound/PageNotFound';
 import Payment from './Components/Dashboard/MyOrders/Payment';
 import Blogs from './Components/Blogs/Blogs';
 import Portfolio from './Components/Portfolio/Portfolio';
+import ResetPass from './Components/Athentication/ResetPass';
 
 export const CancelOrderContext = createContext('');
 
@@ -58,6 +59,7 @@ function App() {
           <Route path='/blogs' element={<Blogs />}></Route>
           <Route path='/portfolio' element={<Portfolio />}></Route>
           <Route path='/login' element={<Login />}></Route>
+          <Route path='/resetpass' element={<ResetPass />}></Route>
           <Route path='/signup' element={<SignUp />}></Route>
           <Route path='*' element={<PageNotFound />}></Route>
         </Routes>

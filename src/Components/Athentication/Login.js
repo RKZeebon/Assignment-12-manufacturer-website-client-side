@@ -6,6 +6,7 @@ import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-fireba
 import auth from '../../firebase.init';
 import Loading from '../SharedPages/Loading';
 import useToken from '../../Hooks/useToken';
+import { ToastContainer } from 'react-toastify';
 
 
 
@@ -102,8 +103,12 @@ const Login = () => {
                         </div>
 
                         {<p className='text-red-500 mb-3'>{signInError}</p>}
+
                         <input className='w-full max-w-xs text-white btn btn-primary px-8 text-lg uppercase font-semibold bg-gradient-to-r from-primary to-secondary' type="submit" value="Login" />
                     </form>
+
+                    <p>Forget Password? <Link className='text-primary font-semibold mb-2' to="/resetpass">Reset</Link></p>
+
                     <p>New here? <Link className='text-primary font-semibold' to="/signup">Sign Up</Link></p>
                     <div className="divider">OR</div>
                     <button
@@ -112,6 +117,7 @@ const Login = () => {
                     > <img className='mr-2' src={googleIcon} alt="" /> Continue with Google</button>
                 </div>
             </div>
+            <ToastContainer />
         </div >
     );
 };
