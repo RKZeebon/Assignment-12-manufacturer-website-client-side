@@ -48,7 +48,7 @@ const AllUsers = () => {
                 </table>
 
             </div>
-            <ToastContainer />
+
         </div>
     );
 };

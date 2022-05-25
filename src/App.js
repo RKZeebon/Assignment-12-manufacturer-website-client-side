@@ -37,6 +37,7 @@ function App() {
       <CancelOrderContext.Provider value={orderId}>
         <Routes>
           <Route path='/' element={<Home />}></Route>
+          <Route path='/home' element={<Home />}></Route>
           <Route path='/alltools' element={<AllTools />}></Route>
           <Route path='/allreviews' element={<AllReviews />}></Route>
           <Route path='/dashboard' element={<ReqAuth><Dashboard /></ReqAuth>}>

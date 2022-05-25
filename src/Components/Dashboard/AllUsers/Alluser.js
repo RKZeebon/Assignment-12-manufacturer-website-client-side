@@ -15,7 +15,7 @@ const Alluser = ({ user, index }) => {
             .then(res => res.json())
             .then(data => {
                 if (data.acknowledged) {
-                    toast.success("Action done Successfully")
+                    toast.success("Admin made Successfully")
                 }
             })
     }
