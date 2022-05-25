@@ -11,7 +11,7 @@ const UpcomingTools = () => {
     return (
         <div className='bg-white lg:w-5/6 mx-auto mt-24 p-5 rounded-lg'>
             <h1 className='mb-16 text-primary text-3xl font-semibold text-center'>Upcoming Tools</h1>
-            <div className='grid grid-cols-1 lg:grid-cols-4'>
+            <div className='grid grid-cols-1 lg:grid-cols-4 gap-5'>
                 {
                     upcomingtools.map((tool, index) => <UpComingTool
                         key={index}

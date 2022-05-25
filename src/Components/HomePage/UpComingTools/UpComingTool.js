@@ -4,7 +4,7 @@ const UpComingTool = ({ tool }) => {
     const { title, img } = tool
     return (
 
-        <div class="card w-96 shadow-xl mx-auto">
+        <div class="card max-w-sm shadow-xl mx-auto">
             <figure class="px-10 pt-10">
                 <img className='w-[200px] h-[200px]' src={img} alt={title} class="rounded-xl" />
             </figure>
