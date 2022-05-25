@@ -59,7 +59,7 @@ const Navbar = () => {
                         <li className='my-1 font-semibold'><NavLink to='/blogs'>Blogs</NavLink></li>
                         <li className='my-1 font-semibold'><NavLink to='/portfolio'>Portfolio</NavLink></li>
 
-                        {user ? <li className='my-1 font-semibold text-red-500'><NavLink to='/logout'>Log Out</NavLink></li> : <li className='my-1 font-semibold'><NavLink to='/login'>Login</NavLink></li>}
+                        {user ? <li onClick={handleLogout} className='my-1 font-semibold text-red-500'><NavLink to='/'>Log Out</NavLink></li> : <li className='my-1 font-semibold'><NavLink to='/login'>Login</NavLink></li>}
                     </ul>
                 </div>
 
