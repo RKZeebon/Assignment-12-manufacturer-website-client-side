@@ -1,7 +1,6 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
-import { ToastContainer } from 'react-toastify';
 import auth from '../../../firebase.init';
 import Loading from '../../SharedPages/Loading';
 import Alluser from './Alluser';
