@@ -16,7 +16,7 @@ const ManageOrder = ({ order, index, refetch }) => {
     let status;
     if (payment && shipped) {
 
-        status = "Shipping"
+        status = "shipped"
     }
     else if (payment) {
         status = "Pending"

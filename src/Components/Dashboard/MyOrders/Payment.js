@@ -33,7 +33,7 @@ const Payment = () => {
 
                         <p className="text-xl font-bold pb-5">Quantity: <span className='text-primary text-2xl'>{quantity}</span></p>
 
-                        <p className="text-xl font-bold pb-5">Total Price: <span className='text-primary text-2xl'>{totalDue} </span></p>
+                        <p className="text-xl font-bold pb-5">Total Price: <span className='text-primary text-2xl'>${totalDue} </span></p>
                     </div>
 
                 </div>

@@ -1,16 +1,16 @@
 import React from 'react';
-import countries from '../../../Assets/icon/countries.ico'
-import projects from '../../../Assets/icon/project.ico'
+import revenue from '../../../Assets/icon/revenue.png'
+import tools from '../../../Assets/icon/tools.png'
 import client from '../../../Assets/icon/client.png'
 import feedback from '../../../Assets/icon/feedback.ico'
 import BusinessSummaryCard from './BusinessSummaryCard';
 
 const BusinessSummary = () => {
     const cardsData = [
-        { img: countries, title: "Countries", value: 50 },
-        { img: projects, title: "Complete Projects", value: 500 },
-        { img: client, title: "Happy Clients", value: 250 },
-        { img: feedback, title: "Feedbacks", value: 350 }]
+        { img: revenue, title: "Revenue", value: '50K' },
+        { img: tools, title: "Tools", value: 500 },
+        { img: client, title: "Happy Customers", value: 250 },
+        { img: feedback, title: "Reviews", value: 150 }]
 
     return (
         <div className='bg-white lg:w-5/6 mx-auto mt-24 p-5 rounded-lg'>

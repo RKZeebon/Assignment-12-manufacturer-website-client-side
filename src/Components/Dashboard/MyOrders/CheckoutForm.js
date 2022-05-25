@@ -63,6 +63,7 @@ const CheckOutForm = ({ order }) => {
         if (confirmError) {
             setCardError(confirmError?.message)
         }
+
         else {
             setCardError('')
             toast.success("Payment Successful")
@@ -72,10 +73,11 @@ const CheckOutForm = ({ order }) => {
                 headers: {
                     'Content-type': 'application/json',
                 },
+                body: JSON.stringify({ trnsactionId: paymentIntent.id })
             })
         }
     }
-    console.log(order._id);
+
     return (
         <form className='p-5' onSubmit={handleSubmit}>
             <CardElement

@@ -11,6 +11,7 @@ const Order = () => {
     const id = useParams()
     const [user, userisLoading] = useAuthState(auth);
     const [quantityAlart, setQuantityAlart] = useState('')
+    const [isDisabled, setIsDisabled] = useState(false)
     const { isLoading, data, refetch } = useQuery('tool', () =>
         fetch(`http://localhost:5000/tool/${id.id}`).then(res =>
             res.json()))
@@ -32,49 +33,62 @@ const Order = () => {
         const quantity = event.target.quantity.value;
         const newAvailable = parseInt(available) - parseInt(quantity)
         const totalDue = parseInt(quantity) * parseInt(price)
-        if (parseInt(quantity) < parseInt(minOrder) || parseInt(quantity) > parseInt(available)) {
+
+
+        fetch('http://localhost:5000/orders', {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json',
+            },
+            body: JSON.stringify({ tool, name, email, address, phone, quantity, totalDue }),
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+                    toast.success("Your order placed successfully")
+                    event.target.reset()
+                }
+                else {
+                    toast.error("Something went wrong, try again later")
+                }
+            });
+
+
+
+        fetch(`http://localhost:5000/tool/${id.id}`, {
+            method: "PUT",
+            headers: {
+                'Content-type': 'application/json',
+            },
+            body: JSON.stringify({ available: newAvailable })
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+                    refetch()
+                    event.target.reset()
+                }
+            })
+
+
+    }
+
+    const handleQuantity = (event) => {
+        const value = event.target.value
+        if (parseInt(value) > parseInt(available)) {
+            setIsDisabled(true)
             const alart = <p className='text-lg text-red-500'>You have to order for minimum: {minOrder} and maximum: {available}</p>
             setQuantityAlart(alart)
-            return;
+        }
+        else if (parseInt(value) < parseInt(minOrder)) {
+            setIsDisabled(true)
+            const alart = <p className='text-lg text-red-500'>You have to order for minimum: {minOrder} and maximum: {available}</p>
+            setQuantityAlart(alart)
         }
         else {
+            setIsDisabled(false)
             setQuantityAlart('')
-            fetch('http://localhost:5000/orders', {
-                method: 'POST',
-                headers: {
-                    'Content-type': 'application/json',
-                },
-                body: JSON.stringify({ tool, name, email, address, phone, quantity, totalDue }),
-            })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.acknowledged) {
-                        toast.success("Your order placed successfully")
-                        event.target.reset()
-                    }
-                    else {
-                        toast.error("Something went wrong, try again later")
-                    }
-                });
-
-
-
-            fetch(`http://localhost:5000/tool/${id.id}`, {
-                method: "PUT",
-                headers: {
-                    'Content-type': 'application/json',
-                },
-                body: JSON.stringify({ available: newAvailable })
-            })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.acknowledged) {
-                        refetch()
-                        event.target.reset()
-                    }
-                })
         }
-
     }
     return (
         <div className="min-h-full p-5 lg:w-5/6 mx-auto bg-white rounded-lg mt-2">
@@ -115,9 +129,9 @@ const Order = () => {
                         <label className="label mt-4">
                             <span className="label-text">Quantity:</span>
                         </label>
-                        <input name='quantity' required type="number" defaultValue={minOrder} className="input input-bordered" />
+                        <input onChange={handleQuantity} name='quantity' required type="number" defaultValue={minOrder} className="input input-bordered" />
                         {quantityAlart}
-                        <input type="submit" value="Place Order" className="btn btn-primary px-8 text-lg uppercase font-semibold bg-gradient-to-r from-primary to-secondary mt-8" />
+                        <input disabled={isDisabled} type="submit" value="Place Order" className="btn btn-primary px-8 text-lg uppercase font-semibold bg-gradient-to-r from-primary to-secondary mt-8" />
                     </form>
                 </div>
                 <ToastContainer />
