@@ -76,9 +76,9 @@ const UpdateTool = () => {
 
                     <form onSubmit={handleUpdate} className="form-control lg:w-3/5">
                         <label className="label mt-4">
-                            <span className="label-text">Available:</span>
+                            <span className="label-text">New Quantity:</span>
                         </label>
-                        <input name='available' required type="text" placeholder='Enter Available Quantity' className="input input-bordered" />
+                        <input name='available' required type="text" placeholder='Enter New Quantity' className="input input-bordered" />
 
                         <label className="label mt-4">
                             <span className="label-text">Min. Order:</span>
