@@ -14,7 +14,7 @@ const ManageTool = ({ tool, index, handleRemove }) => {
             <td>{price}</td>
             <td className='text-center'>
                 <button onClick={() => navigate(`updatetool/${_id}`)} className='btn btn-primary mr-2'>update</button>
-                <label for="removeToolModal" onClick={() => handleRemove(_id, title)} className='btn btn-error'>Remove </label>
+                <label htmlFor="removeToolModal" onClick={() => handleRemove(_id, title)} className='btn btn-error'>Remove </label>
             </td>
 
 

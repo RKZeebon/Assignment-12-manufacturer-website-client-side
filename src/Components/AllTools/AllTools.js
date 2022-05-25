@@ -5,7 +5,7 @@ import AllTool from './AllTool';
 
 const AllTools = () => {
     const { isLoading, data: tools } = useQuery('allTools', () =>
-        fetch('http://localhost:5000/tools').then(res =>
+        fetch('https://rkz-mason-tools.herokuapp.com/tools').then(res =>
             res.json()))
 
 

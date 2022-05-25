@@ -4,7 +4,7 @@ const ManageOrder = ({ order, index, refetch }) => {
     const { _id, tool, quantity, payment, name, email, phone, shipped } = order;
     const handleStatus = (id) => {
 
-        fetch(`http://localhost:5000/shipping/${id}`, {
+        fetch(`https://rkz-mason-tools.herokuapp.com/shipping/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-type': 'application/json',

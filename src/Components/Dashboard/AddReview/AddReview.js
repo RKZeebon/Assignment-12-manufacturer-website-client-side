@@ -16,7 +16,7 @@ const AddReview = () => {
         }
         else {
             setRatingError('')
-            fetch('http://localhost:5000/review', {
+            fetch('https://rkz-mason-tools.herokuapp.com/review', {
                 method: 'POST',
 
                 headers: {

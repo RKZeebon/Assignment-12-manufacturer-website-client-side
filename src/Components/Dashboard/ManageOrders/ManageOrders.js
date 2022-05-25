@@ -8,7 +8,7 @@ import ManageOrder from './ManageOrder';
 const ManageOrders = () => {
     const [user] = useAuthState(auth);
 
-    const { isLoading, data: orders, refetch } = useQuery('Orders', () => fetch('http://localhost:5000/orders', {
+    const { isLoading, data: orders, refetch } = useQuery('Orders', () => fetch('https://rkz-mason-tools.herokuapp.com/orders', {
         headers: {
             'authorization': localStorage.getItem('token'),
             'email': user.email

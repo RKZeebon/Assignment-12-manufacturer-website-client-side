@@ -5,7 +5,7 @@ const Alluser = ({ user, index }) => {
     const { name, email, role } = user;
     const newRole = 'admin'
     const handleMakeAdmin = email => {
-        fetch(`http://localhost:5000/user?email=${email}`, {
+        fetch(`https://rkz-mason-tools.herokuapp.com/user?email=${email}`, {
             method: "PUT",
             headers: {
                 'Content-type': 'application/json',

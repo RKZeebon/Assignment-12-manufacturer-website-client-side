@@ -28,7 +28,7 @@ const Portfolio = () => {
                 <h1 className='text-2xl font-bold mb-2'>Md. Rezaul Karim</h1>
                 <h2 className='text-lg font-semibold mb-10'>Email: rkzeebon@gmail.com</h2>
                 <h2 className='text-lg font-semibold mb-2'>Education: </h2>
-                <table class="table w-full mb-10">
+                <table className="table w-full mb-10">
 
                     <thead>
                         <tr>

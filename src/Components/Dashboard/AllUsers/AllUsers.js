@@ -9,7 +9,7 @@ import Alluser from './Alluser';
 const AllUsers = () => {
     const [user] = useAuthState(auth);
 
-    const { isLoading, data: users, refetch } = useQuery('allUsers', () => fetch('http://localhost:5000/allUser', {
+    const { isLoading, data: users, refetch } = useQuery('allUsers', () => fetch('https://rkz-mason-tools.herokuapp.com/allUser', {
         headers: {
             'authorization': localStorage.getItem('token'),
             'email': user.email

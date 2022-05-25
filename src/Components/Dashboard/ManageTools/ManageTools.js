@@ -8,7 +8,7 @@ const ManageTools = () => {
     const [removingToolId, setRemovingToolId] = useState('')
     const [removingToolTitle, setRemovingToolTitle] = useState('')
     const { isLoading, data: tools, refetch } = useQuery('allTools', () =>
-        fetch('http://localhost:5000/tools').then(res =>
+        fetch('https://rkz-mason-tools.herokuapp.com/tools').then(res =>
             res.json()))
 
 

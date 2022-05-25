@@ -8,7 +8,7 @@ const CancelOrderModal = () => {
 
     const [canceledOrder, setCanceledOrder] = useState({})
     useEffect(() => {
-        fetch(`http://localhost:5000/myorder/${orderId}`)
+        fetch(`https://rkz-mason-tools.herokuapp.com/myorder/${orderId}`)
             .then(res => res.json())
             .then(data => setCanceledOrder(data))
 
@@ -16,7 +16,7 @@ const CancelOrderModal = () => {
 
 
     const handlecancleOrder = () => {
-        fetch(`http://localhost:5000/myorder/${orderId}`, {
+        fetch(`https://rkz-mason-tools.herokuapp.com/myorder/${orderId}`, {
             method: 'DELETE',
         })
             .then(res => res.json())

@@ -11,7 +11,7 @@ const CheckOutForm = ({ order }) => {
 
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
-        fetch("http://localhost:5000/create-payment-intent", {
+        fetch("https://rkz-mason-tools.herokuapp.com/create-payment-intent", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ totalDue }),
@@ -68,7 +68,7 @@ const CheckOutForm = ({ order }) => {
             setCardError('')
             toast.success("Payment Successful")
 
-            fetch(`http://localhost:5000/order/${order._id}`, {
+            fetch(`https://rkz-mason-tools.herokuapp.com/order/${order._id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-type': 'application/json',

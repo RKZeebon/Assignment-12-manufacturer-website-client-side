@@ -10,7 +10,7 @@ const UpdateTool = () => {
     const error = <p className='text-red-500 text-center mt-2'>Don't enter 0 or a nagative number</p>
     const updatingToolId = id.id
     const { isLoading, data: updatingTool, refetch } = useQuery('updatingTool', () =>
-        fetch(`http://localhost:5000/tool/${updatingToolId}`).then(res =>
+        fetch(`https://rkz-mason-tools.herokuapp.com/tool/${updatingToolId}`).then(res =>
             res.json()))
 
 
@@ -39,7 +39,7 @@ const UpdateTool = () => {
         }
 
         else {
-            fetch(`http://localhost:5000/tool/${updatingToolId}`, {
+            fetch(`https://rkz-mason-tools.herokuapp.com/tool/${updatingToolId}`, {
                 method: "PUT",
                 headers: {
                     'Content-type': 'application/json',

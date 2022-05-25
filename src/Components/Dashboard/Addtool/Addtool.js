@@ -13,7 +13,7 @@ const Addtool = () => {
         const text = event.target.description.value;
 
 
-        fetch('http://localhost:5000/addTool', {
+        fetch('https://rkz-mason-tools.herokuapp.com/addTool', {
             method: 'POST',
             body: JSON.stringify({
                 title,

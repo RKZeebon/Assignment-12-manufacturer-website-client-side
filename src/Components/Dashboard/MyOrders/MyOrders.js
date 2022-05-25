@@ -9,7 +9,7 @@ const MyOrders = ({ setOrderID }) => {
     const [user] = useAuthState(auth);
 
 
-    const { isLoading, data: orders, refetch } = useQuery('myOrders', () => fetch(`http://localhost:5000/myorders?email=${user.email}`, {
+    const { isLoading, data: orders, refetch } = useQuery('myOrders', () => fetch(`https://rkz-mason-tools.herokuapp.com/myorders?email=${user.email}`, {
         headers: {
             'authorization': localStorage.getItem('token')
         }

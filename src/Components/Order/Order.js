@@ -13,7 +13,7 @@ const Order = () => {
     const [quantityAlart, setQuantityAlart] = useState('')
     const [isDisabled, setIsDisabled] = useState(false)
     const { isLoading, data, refetch } = useQuery('tool', () =>
-        fetch(`http://localhost:5000/tool/${id.id}`).then(res =>
+        fetch(`https://rkz-mason-tools.herokuapp.com/tool/${id.id}`).then(res =>
             res.json()))
 
 
@@ -35,7 +35,7 @@ const Order = () => {
         const totalDue = parseInt(quantity) * parseInt(price)
 
 
-        fetch('http://localhost:5000/orders', {
+        fetch('https://rkz-mason-tools.herokuapp.com/order', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json',
@@ -55,7 +55,7 @@ const Order = () => {
 
 
 
-        fetch(`http://localhost:5000/tool/${id.id}`, {
+        fetch(`https://rkz-mason-tools.herokuapp.com/tool/${id.id}`, {
             method: "PUT",
             headers: {
                 'Content-type': 'application/json',

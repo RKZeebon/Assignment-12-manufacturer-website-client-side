@@ -7,7 +7,7 @@ import Review from './Review';
 const Reviews = () => {
     const navigate = useNavigate()
     const { isLoading, data } = useQuery('reviews', () =>
-        fetch('http://localhost:5000/reviews').then(res =>
+        fetch('https://rkz-mason-tools.herokuapp.com/reviews').then(res =>
             res.json()))
 
 
